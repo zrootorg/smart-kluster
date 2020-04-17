@@ -6,6 +6,7 @@ ADD . /app/
 #RUN go build -a -o smk -v -ldflags '-w' .
 RUN make build
 
+
 FROM scratch
 COPY --from=builder /app/bin/smak /smak
 ENTRYPOINT ["/smak"]
